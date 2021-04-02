@@ -1,0 +1,34 @@
+{
+  "name": "good-friends-colors",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "clean": "rimraf dist/*",
+    "tsc": "tsc",
+    "build": "npm-run-all clean tsc",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/yuki-takara/good-friends-colors.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuki-takara/good-friends-colors/issues"
+  },
+  "homepage": "https://github.com/yuki-takara/good-friends-colors#readme",
+  "devDependencies": {
+    "@types/node": "^14.14.37",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.3"
+  }
+}
