@@ -1,0 +1,16 @@
+name: Sample Test
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js v14.15.5
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.15.5'
+      - run: yarn install
+      - run: yarn run test
