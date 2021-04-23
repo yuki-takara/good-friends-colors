@@ -1,4 +1,4 @@
-name: Sample Test
+name: exec test
 
 on: push
 
