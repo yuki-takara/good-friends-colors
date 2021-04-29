@@ -10,6 +10,12 @@ export type XyzType = {
   z: number
 }
 
+export type LabType = {
+  l: number
+  a: number
+  b: number
+}
+
 const gf = ({ r, g, b }: RgbType): GfColor => {
   return new GfColor({ r, g, b })
 }
@@ -56,6 +62,31 @@ export class GfColor {
     const z = upR * 0.0193 + upG * 0.1192 + upB * 0.9505
 
     return { x, y, z }
+  }
+
+  toLab(): LabType {
+    // https://ja.wikipedia.org/wiki/Lab%E8%89%B2%E7%A9%BA%E9%96%93#CIE_XYZ_%E3%81%A8%E3%81%AE%E5%A4%89%E6%8F%9B
+    // example: http://www.easyrgb.com/en/math.php
+
+    const { x, y, z } = this.toXyz()
+
+    const refX = 95.047, // Observer= 2°, Illuminant= D65
+      refY = 100,
+      refZ = 108.883
+
+    const X = x / refX,
+      Y = y / refY,
+      Z = z / refZ
+
+    const f = (t: number) => {
+      return t > 0.008856 ? Math.pow(t, 1 / 3) : 7.787 * t + 4 / 29
+    }
+
+    const l = 116 * f(Y) - 16
+    const a = 500 * (f(X) - f(Y))
+    const b = 200 * (f(Y) - f(Z))
+
+    return { l, a, b }
   }
 }
 
