@@ -108,9 +108,9 @@ describe('toLab', () => {
   })
 
   const toRound = ({ l, a, b }: LabType): LabType => {
-    const newL = Math.round(l + 10) / 10
-    const newA = Math.round(a + 10) / 10
-    const newB = Math.round(b + 10) / 10
+    const newL = Math.round(l * 10) / 10
+    const newA = Math.round(a * 10) / 10
+    const newB = Math.round(b * 10) / 10
     return { l: newL, a: newA, b: newB }
   }
 })
