@@ -76,6 +76,14 @@ export class GfColor {
     return { l, a, b }
   }
 
+  isGoodFriend(comparisonColor: RgbType, colorDifference?: number): boolean {
+    const r = this.diff(comparisonColor)
+
+    // 人が違う色と色判断出来る範囲は2以下
+    const judgmentValue = colorDifference ? colorDifference : 2
+    return r < judgmentValue
+  }
+
   diff(comparisonColor: RgbType) {
     const x = this.toLab()
     const y = gf(comparisonColor).toLab()
