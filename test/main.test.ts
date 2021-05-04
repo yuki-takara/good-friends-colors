@@ -51,9 +51,9 @@ describe('toXyz', () => {
   })
 
   const toRound = ({ x, y, z }: XyzType): XyzType => {
-    const newX = Math.round(x + 10) / 10
-    const newY = Math.round(y + 10) / 10
-    const newZ = Math.round(z + 10) / 10
+    const newX = Math.round(x)
+    const newY = Math.round(y)
+    const newZ = Math.round(z)
     return { x: newX, y: newY, z: newZ }
   }
 })
