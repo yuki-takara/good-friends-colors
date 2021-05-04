@@ -76,6 +76,13 @@ export class GfColor {
     return { l, a, b }
   }
 
+  diff(comparisonColor: RgbType) {
+    const x = this.toLab()
+    const y = gf(comparisonColor).toLab()
+
+    return this._ciede2000(x, y)
+  }
+
   private _ciede2000(x: LabType, y: LabType): number {
     const KL = 1
     const KC = 1
