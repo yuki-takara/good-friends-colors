@@ -1,3 +1,6 @@
+import { radians, degrees, hypot, pow2, pow7 } from './math'
+const { abs, atan2, cos, exp, sqrt, sin } = Math
+
 type RgbType = {
   r: number
   g: number
@@ -83,6 +86,88 @@ export class GfColor {
     const b = 200 * (f(Y) - f(Z))
 
     return { l, a, b }
+  }
+
+  private _ciede2000(x: LabType, y: LabType): number {
+    const KL = 1
+    const KC = 1
+    const KH = 1
+    const POW7_25 = pow7(25)
+
+    const l1 = x.l
+    const a1 = x.a
+    const b1 = x.b
+    const l2 = y.l
+    const a2 = y.a
+    const b2 = y.b
+
+    const c1 = hypot(a1, b1)
+    const c2 = hypot(a2, b2)
+    const ac1c2 = (c1 + c2) / 2
+    const g = 0.5 * (1 - sqrt(pow7(ac1c2) / (pow7(ac1c2) + POW7_25)))
+
+    const a1p = (1 + g) * a1
+    const a2p = (1 + g) * a2
+
+    const c1p = sqrt(pow2(a1p) + pow2(b1))
+    const c2p = sqrt(pow2(a2p) + pow2(b2))
+
+    const h1pd = degrees(atan2(b1, a1p))
+    const h1p = b1 === 0 && a1p === 0 ? 0 : h1pd > 0 ? h1pd : h1pd + 360
+
+    const h2pd = degrees(atan2(b2, a2p))
+    const h2p = b2 === 0 && a2p === 0 ? 0 : h2pd > 0 ? h2pd : h2pd + 360
+
+    const dlp = l2 - l1
+    const dcp = c2p - c1p
+    const dhp =
+      2 *
+      sqrt(c1p * c2p) *
+      sin(
+        radians(
+          c1 * c2 === 0
+            ? 0
+            : abs(h2p - h1p) <= 180
+            ? h2p - h1p
+            : h2p - h1p > 180
+            ? h2p - h1p - 360
+            : h2p - h1p + 360
+        ) / 2
+      )
+
+    const al = (l1 + l2) / 2
+    const acp = (c1p + c2p) / 2
+
+    let ahp
+    if (c1 * c2 === 0) {
+      ahp = h1p + h2p
+    } else if (abs(h1p - h2p) <= 180) {
+      ahp = (h1p + h2p) / 2
+    } else if (abs(h1p - h2p) > 180 && h1p + h2p < 360) {
+      ahp = (h1p + h2p + 360) / 2
+    } else {
+      ahp = (h1p + h2p - 360) / 2
+    }
+
+    const t =
+      1 -
+      0.17 * cos(radians(ahp - 30)) +
+      0.24 * cos(radians(2 * ahp)) +
+      0.32 * cos(radians(3 * ahp + 6)) -
+      0.2 * cos(radians(4 * ahp - 63))
+    const dro = 30 * exp(-pow2((ahp - 275) / 25))
+    const rc = sqrt(pow7(acp) / (pow7(acp) + POW7_25))
+    const sl = 1 + (0.015 * pow2(al - 50)) / sqrt(20 + pow2(al - 50))
+    const sc = 1 + 0.045 * acp
+    const sh = 1 + 0.015 * acp * t
+    const rt = -2 * rc * sin(radians(2 * dro))
+
+    return sqrt(
+      pow2(dlp / (sl * KL)) +
+        pow2(dcp / (sc * KC)) +
+        pow2(dhp / (sh * KH)) +
+        rt * (dcp / (sc * KC)) * (dhp / (sh * KH))
+    )
   }
 }
 
