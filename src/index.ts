@@ -1,23 +1,11 @@
 import { radians, degrees, hypot, pow2, pow7 } from './math'
 const { abs, atan2, cos, exp, sqrt, sin } = Math
 
-type RgbType = {
-  r: number
-  g: number
-  b: number
-}
+type RgbType = { r: number; g: number; b: number }
 
-export type XyzType = {
-  x: number
-  y: number
-  z: number
-}
+export type XyzType = { x: number; y: number; z: number }
 
-export type LabType = {
-  l: number
-  a: number
-  b: number
-}
+export type LabType = { l: number; a: number; b: number }
 
 const gf = ({ r, g, b }: RgbType): GfColor => {
   return new GfColor({ r, g, b })
