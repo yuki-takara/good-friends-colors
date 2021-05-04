@@ -184,3 +184,77 @@ describe('ciede2000', () => {
 
   const toRound = (n: number): number => Math.round(n * 10000) / 10000
 })
+
+describe('isGoodFriend', () => {
+  test('truthy 1', () => {
+    const c1 = { r: 20, g: 192, b: 59 }
+    const c2 = { r: 30, g: 188, b: 63 }
+
+    const ret = gf(c1).isGoodFriend(c2)
+
+    expect(ret).toBeTruthy()
+  })
+
+  test('truthy 2', () => {
+    const c1 = { r: 190, g: 204, b: 29 }
+    const c2 = { r: 187, g: 200, b: 34 }
+
+    const ret = gf(c1).isGoodFriend(c2)
+
+    expect(ret).toBeTruthy()
+  })
+
+  test('falsy 1', () => {
+    const c1 = { r: 255, g: 0, b: 0 }
+    const c2 = { r: 0, g: 255, b: 0 }
+
+    const ret = gf(c1).isGoodFriend(c2)
+
+    expect(ret).toBeFalsy()
+  })
+
+  test('falsy 2', () => {
+    const c1 = { r: 255, g: 255, b: 255 }
+    const c2 = { r: 0, g: 0, b: 0 }
+
+    const ret = gf(c1).isGoodFriend(c2)
+
+    expect(ret).toBeFalsy()
+  })
+
+  test('falsy 3', () => {
+    const c1 = { r: 67, g: 218, b: 32 }
+    const c2 = { r: 77, g: 205, b: 44 }
+
+    const ret = gf(c1).isGoodFriend(c2)
+
+    expect(ret).toBeFalsy()
+  })
+
+  test('falsy 4', () => {
+    const c1 = { r: 34, g: 86, b: 152 }
+    const c2 = { r: 37, g: 93, b: 151 }
+
+    const ret = gf(c1).isGoodFriend(c2)
+
+    expect(ret).toBeFalsy()
+  })
+
+  test('truthy 1 (with color difference)', () => {
+    const c1 = { r: 34, g: 86, b: 152 }
+    const c2 = { r: 37, g: 93, b: 151 }
+
+    const ret = gf(c1).isGoodFriend(c2, 3)
+
+    expect(ret).toBeTruthy()
+  })
+
+  test('falsy 1 (with color difference)', () => {
+    const c1 = { r: 34, g: 86, b: 152 }
+    const c2 = { r: 37, g: 93, b: 151 }
+
+    const ret = gf(c1).isGoodFriend(c2, 2.5)
+
+    expect(ret).toBeFalsy()
+  })
+})
