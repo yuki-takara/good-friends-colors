@@ -53,13 +53,9 @@ export class GfColor {
       linearG = toLinear(srgbG),
       linearB = toLinear(srgbB)
 
-    const upR = linearR * 100,
-      upG = linearG * 100,
-      upB = linearB * 100
-
-    const x = upR * 0.4124 + upG * 0.3576 + upB * 0.1805
-    const y = upR * 0.2126 + upG * 0.7152 + upB * 0.0722
-    const z = upR * 0.0193 + upG * 0.1192 + upB * 0.9505
+    const x = (linearR * 0.4124 + linearG * 0.3576 + linearB * 0.1805) * 100
+    const y = (linearR * 0.2126 + linearG * 0.7152 + linearB * 0.0722) * 100
+    const z = (linearR * 0.0193 + linearG * 0.1192 + linearB * 0.9505) * 100
 
     return { x, y, z }
   }
