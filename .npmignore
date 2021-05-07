@@ -1,0 +1,10 @@
+.github/
+.idea/
+node_modules/
+src/
+test/
+.editorconfig
+.prettierrc.js
+jest.config.js
+tsconfig.json
+yarn.lock
