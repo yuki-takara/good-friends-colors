@@ -11,17 +11,8 @@
     "build": "npm-run-all clean tsc",
     "start": "node ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/yuki-takara/good-friends-colors.git"
-  },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yuki-takara/good-friends-colors/issues"
-  },
-  "homepage": "https://github.com/yuki-takara/good-friends-colors#readme",
+  "license": " MIT",
   "devDependencies": {
     "@types/jest": "^26.0.22",
     "@types/node": "^14.14.37",
