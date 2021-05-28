@@ -1,7 +1,7 @@
 {
   "name": "good-friends-colors",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.9.0",
+  "description": "Find the color difference between the two colors and determine if they are similar",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
@@ -11,17 +11,8 @@
     "build": "npm-run-all clean tsc",
     "start": "node ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/yuki-takara/good-friends-colors.git"
-  },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yuki-takara/good-friends-colors/issues"
-  },
-  "homepage": "https://github.com/yuki-takara/good-friends-colors#readme",
+  "license": " MIT",
   "devDependencies": {
     "@types/jest": "^26.0.22",
     "@types/node": "^14.14.37",
