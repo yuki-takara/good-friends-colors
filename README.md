@@ -1,5 +1,7 @@
 # good-friends-colors
 
+![test](https://github.com/yuki-takara/good-friends-colors/actions/workflows/test.yml/badge.svg)
+
 ```bash
 $ yarn add good-friends-colors
 ```
