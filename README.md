@@ -29,16 +29,7 @@ $ yarn add good-friends-colors
 
 「**人の目で違う色と判断しづらいもの**」を`CIEDE2000色素式`と呼ばれる計算式で判定します。
 
-<div style="display: flex;">
-  <div>
-    <div style="width: 120px; height: 120px; background-color: rgb(20, 192, 59)"></div>
-    <div>R: 20 G: 192 B: 59</div>
-  </div>
-  <div style="margin-left: 30px;">
-    <div style="width: 120px; height: 120px; background-color: rgb(30, 188, 63)"></div>
-    <div>R: 30 G: 188 B: 63</div>
-  </div>
-</div>
+<img src="https://user-images.githubusercontent.com/10525280/125183223-b6acbe00-e24f-11eb-86f1-c0c60880cce7.jpg" width="45%" />
 
 ```ts
 import gf from 'good-friends-colors'
@@ -53,16 +44,7 @@ console.log(result)
 
 <br/><br/>
 
-<div style="display: flex;">
-  <div>
-    <div style="width: 120px; height: 120px; background-color: rgb(20, 192, 59)"></div>
-    <div>R: 20 G: 192 B: 59</div>
-  </div>
-  <div style="margin-left: 30px;">
-    <div style="width: 120px; height: 120px; background-color: rgb(255, 188, 63)"></div>
-    <div>R: 255 G: 188 B: 63</div>
-  </div>
-</div>
+<img src="https://user-images.githubusercontent.com/10525280/125183222-b6142780-e24f-11eb-8cc2-db3bf682f1d2.jpg" width="45%" />
 
 ```ts
 import gf from 'good-friends-colors'
@@ -83,16 +65,7 @@ console.log(result)
 2つの色の差を求めます。  
 こちらでも`CIEDE2000色素式`を使用しています。
 
-<div style="display: flex;">
-  <div>
-    <div style="width: 120px; height: 120px; background-color: rgb(20, 192, 59)"></div>
-    <div>R: 20 G: 192 B: 59</div>
-  </div>
-  <div style="margin-left: 30px;">
-    <div style="width: 120px; height: 120px; background-color: rgb(30, 188, 63)"></div>
-    <div>R: 30 G: 188 B: 63</div>
-  </div>
-</div>
+<img src="https://user-images.githubusercontent.com/10525280/125183223-b6acbe00-e24f-11eb-86f1-c0c60880cce7.jpg" width="45%" />
 
 ```ts
 import gf from 'good-friends-colors'
@@ -107,16 +80,7 @@ console.log(result)
 
 <br/><br/>
 
-<div style="display: flex;">
-  <div>
-    <div style="width: 120px; height: 120px; background-color: rgb(20, 192, 59)"></div>
-    <div>R: 20 G: 192 B: 59</div>
-  </div>
-  <div style="margin-left: 30px;">
-    <div style="width: 120px; height: 120px; background-color: rgb(255, 188, 63)"></div>
-    <div>R: 255 G: 188 B: 63</div>
-  </div>
-</div>
+<img src="https://user-images.githubusercontent.com/10525280/125183222-b6142780-e24f-11eb-8cc2-db3bf682f1d2.jpg" width="45%" />
 
 ```ts
 import gf from 'good-friends-colors'
@@ -137,16 +101,7 @@ console.log(result)
 
 `default: 2`
 
-<div style="display: flex;">
-  <div>
-    <div style="width: 120px; height: 120px; background-color: rgb(20, 192, 59)"></div>
-    <div>R: 20 G: 192 B: 59</div>
-  </div>
-  <div style="margin-left: 30px;">
-    <div style="width: 120px; height: 120px; background-color: rgb(5, 192, 120)"></div>
-    <div>R: 5 G: 192 B: 120</div>
-  </div>
-</div>
+<img src="https://user-images.githubusercontent.com/10525280/125183221-b4e2fa80-e24f-11eb-9b84-f75261592b6c.jpg" width="45%" />
 
 ```ts
 import gf from 'good-friends-colors'
