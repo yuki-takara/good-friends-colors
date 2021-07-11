@@ -11,7 +11,13 @@
     "build": "npm-run-all clean tsc",
     "start": "node ."
   },
-  "keywords": [],
+  "keywords": [
+    "color",
+    "diff",
+    "color-diff",
+    "CIEDE2000",
+    "ciede2000"
+  ],
   "license": " MIT",
   "devDependencies": {
     "@types/jest": "^26.0.22",
