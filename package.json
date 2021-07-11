@@ -1,6 +1,6 @@
 {
   "name": "good-friends-colors",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "Find the color difference between the two colors and determine if they are similar",
   "main": "dist/index.js",
   "scripts": {
@@ -11,7 +11,13 @@
     "build": "npm-run-all clean tsc",
     "start": "node ."
   },
-  "keywords": [],
+  "keywords": [
+    "color",
+    "diff",
+    "color-diff",
+    "CIEDE2000",
+    "ciede2000"
+  ],
   "license": " MIT",
   "devDependencies": {
     "@types/jest": "^26.0.22",
