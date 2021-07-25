@@ -2,6 +2,8 @@
 
 ![test](https://github.com/yuki-takara/good-friends-colors/actions/workflows/test.yml/badge.svg)
 
+![good-friends-colors](https://user-images.githubusercontent.com/10525280/126899642-8f0bb9fd-90c3-43c4-86e3-e30382b7074c.jpg)
+
 good-friends-colorsは2つの色が似た色かどうかを判定する事が出来ます。
 
 <br/>
